@@ -11,8 +11,11 @@
 
     if(mysqli_query($conn, $sql)) {
         echo "Inserção bem-sucedida";
+        header("Location: ../HTML/login.html ");
+        exit;
+
     }else{
-        echo "Erro na Inserção" . $stmt->error;
+        echo "Erro na Inserção" . $conn->error;
     }
 
     $conn->close();

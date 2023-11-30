@@ -12,7 +12,7 @@ $result = $conn->query($sql);
 
 if($result->num_rows  > 0){
     echo "Login bem sucedido";
-    header("Location:Menu.php");
+    header("Location:menu.php");
 }else{
     echo "Usuario ou Senha estão incorretos" ;
 }

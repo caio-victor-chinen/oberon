@@ -1,43 +1,8 @@
-<?php
+<?php 
+
 include_once('../PHP/conexao.php');
+session_start();
 
-  // Obter dados do formulário
-  $username = $_POST['username'];
-  $password = $_POST['password'];
-
-  // Consulta SQL
-  $sql = "SELECT email, senha FROM oberonproject WHERE email = '$username' AND senha = '$password'";
-  $result = $conn->query($sql);
-
-  // Verificar se há resultados e se a senha está correta
-  if ($result->num_rows > 0) {
-      $row = $result->fetch_assoc();
-
-         session_start();
-
-          // Iniciar a sessão e armazenar o ID do usuário
-          $_SESSION['senha'] = $row['senha'];
-          $_SESSION['email'] = $row['email'];
-
-
-
-          // Redirecionar para a página do usuário
-        //   header("Location:../HTML/menu.php");     
-  } else {
-      echo 'Senha ou login incorretos';
-  }
-
-  // Fechar a conexão
-
-// Inicie a sessão
-// Verifique se a sessão 'Email' está definida
-if (!isset($_SESSION['email'])) {
-    // Se não estiver, redirecione para a página de login ou faça algo apropriado
-    header("Location: login.html");
-    exit();
-}
-
-// Recupere o email da sessão
 $email = $_SESSION['email'];
 
 
@@ -59,6 +24,7 @@ $stmt->close();
 
 // Feche a conexão
 $conn->close();
+
 ?>
 
 
@@ -80,7 +46,7 @@ $conn->close();
     <p>Email: <?php echo $obj['email']; ?></p>
     <p>Descrição: [Kabum]</p>
 
-    <button onclick="window.location.href='atualiza.html'">atualizar informaçoes do usuario</button>
+    <button onclick="window.location.href='atualiza.html'">atualizar nome de usuario</button>
     <button onclick="window.location.href='delete.html'">Excluir usuario</button>
 </div>
 

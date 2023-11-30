@@ -16,6 +16,8 @@ $result = $conn->query($sql);
 
 if($conn->query($sql) === TRUE){
     echo "Dados Atualizados";
+    header("Location: ../HTML/menu.php ");
+    exit;
 
 }else{
     echo "Erro ao atualizar";
