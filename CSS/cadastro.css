@@ -13,6 +13,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    overflow: hidden;
 }
 
 .container {
@@ -24,6 +25,8 @@ body {
     width: 400px;
     margin: 0 auto;
     color: #333;
+    position: relative;
+    z-index: 1;
 }
 
 .form-group {
@@ -57,4 +60,26 @@ button {
 
 button:hover {
     background-color: #27ae60;
+}
+
+body::before {
+    content: "Socorro"; /* Adicione o texto desejado aqui */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 50px;
+    line-height: 50px; /* Centraliza verticalmente o texto */
+    background: linear-gradient(45deg, #ffd700, #cca300);
+    z-index: 0;
+    animation: moveBackground 5s infinite linear;
+}
+
+@keyframes moveBackground {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translate(calc(100% + 50px), calc(100% + 50px));
+    }
 }
