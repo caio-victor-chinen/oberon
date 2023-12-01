@@ -10,10 +10,10 @@
     $sql = "INSERT INTO oberonproject (nome, email, senha) VALUES ('$nome' ,'$email' ,'$senha')";
 
     if(mysqli_query($conn, $sql)) {
-        echo "Inserção bem-sucedida";
+        
         header("Location: ../HTML/login.html ");
         exit;
-
+        echo "Inserção bem-sucedida";
     }else{
         echo "Erro na Inserção" . $conn->error;
     }
