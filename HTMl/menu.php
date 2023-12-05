@@ -19,6 +19,9 @@ $obj = mysqli_fetch_assoc($result);
 // echo "Nome: " . $obj['Nome'] . "<br>";
 // echo "Email: " . $obj['Email'] . "<br>";
 
+
+
+
 // Feche a declaração preparada
 $stmt->close();
 
@@ -48,6 +51,8 @@ $conn->close();
 
     <button onclick="window.location.href='atualiza.html'">atualizar nome de usuario</button>
     <button onclick="window.location.href='delete.html'">Excluir usuario</button>
+    <button onclick="window.location.href='logout.php'">sair da conta</button>
+
 </div>
 
 </body>
