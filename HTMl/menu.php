@@ -5,9 +5,6 @@ session_start();
 
 $email = $_SESSION['email'];
 
-
-
-// Consulta SQL usando uma instrução preparada
 $sql = "SELECT * FROM oberonproject WHERE email = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $email);
@@ -15,29 +12,17 @@ $stmt->execute();
 $result = $stmt->get_result();
 $obj = mysqli_fetch_assoc($result);
 
-// Exemplo de uso dos dados recuperados
-// echo "Nome: " . $obj['Nome'] . "<br>";
-// echo "Email: " . $obj['Email'] . "<br>";
-
-
-
-
-// Feche a declaração preparada
 $stmt->close();
-
-// Feche a conexão
 $conn->close();
 
 ?>
 
-
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/menu.css">
     <title>Visualização do Usuário</title>
-     
 </head>
 <body>
 
@@ -49,9 +34,9 @@ $conn->close();
     <p>Email: <?php echo $obj['email']; ?></p>
     <p>Descrição: [Kabum]</p>
 
-    <button onclick="window.location.href='atualiza.html'">atualizar nome de usuario</button>
-    <button onclick="window.location.href='delete.html'">Excluir usuario</button>
-    <button onclick="window.location.href='logout.php'">sair da conta</button>
+    <button onclick="window.location.href='atualiza.html'">Atualizar nome de usuário</button>
+    <button onclick="window.location.href='delete.html'">Excluir usuário</button>
+    <button class="sair-btn" onclick="window.location.href='logout.php'">Sair da conta</button>
 
 </div>
 

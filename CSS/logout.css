@@ -1,8 +1,10 @@
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -15,6 +17,7 @@ body {
     height: 100vh;
 }
 
+
 .container {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.9);
@@ -25,35 +28,23 @@ body {
     margin: 0 auto;
     color: #333;
 }
+/* Restante do seu CSS */
 
-h2 {
-    margin-bottom: 20px;
-    color: #3498db;
-}
-
-p {
-    margin-bottom: 15px;
-    color: #555;
-}
-
-button {
-    padding: 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-right: 10px;
-}
-
-button.sair-btn {
-    background-color: #e74c3c;
+button, a {
+    background-color: #e74c3c; /* Cor vermelha */
     color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 16px;
 }
 
-button:hover {
-    background-color: #27ae60;
+button:hover, a:hover {
+    background-color: #c0392b; /* Cor vermelha mais escura no hover */
 }
 
-button.sair-btn:hover {
-    background-color: #c0392b;
-}
+/* Restante do seu CSS */
