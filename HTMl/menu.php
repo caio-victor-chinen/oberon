@@ -32,7 +32,7 @@ $conn->close();
 
     <p>Nome: <?php echo $obj['nome']; ?></p>
     <p>Email: <?php echo $obj['email']; ?></p>
-    <p>Descrição: [Kabum]</p>
+    <p>ID do usuario: Numero <?php echo $obj['idnew_table']; ?></p>
 
     <button onclick="window.location.href='atualiza.html'">Atualizar nome de usuário</button>
     <button onclick="window.location.href='delete.html'">Excluir usuário</button>
